@@ -1,0 +1,14 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+.repoName, .stars, .description{
+    font-size: 1em;
+    font-weight: bolder;
+    margin-left: 10px;
+}
+.ownerPhoto{
+    width: 250px;
+
+}

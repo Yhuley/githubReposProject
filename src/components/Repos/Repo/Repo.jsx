@@ -1,5 +1,6 @@
 import React from 'react'
 import s from './Repo.module.css'
+import {NavLink} from "react-router-dom"
 
 const Repo = props => {
     const {repo} = props
@@ -7,7 +8,11 @@ const Repo = props => {
     return (
         <div className={s.repo}>
             <div className={s.repoHeader}>
-                <div className={s.repoHeaderName}>Repo name: {repo.name}</div>
+                <div className={s.repoHeaderName}>
+                    <NavLink to={`/repo/${repo.owner.login}/${repo.name}`}>
+                        Repo name: {repo.name}
+                    </NavLink>
+                </div>
                 <div className={s.repoHeaderStars}>{repo.stargazers_count} ★</div>
             </div>
             <div className={s.repoLastCommit}>Last commit: {repo.updated_at}</div>
