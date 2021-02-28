@@ -1,10 +1,12 @@
-import React from 'react';
+import React from 'react'
+import s from "./Error.module.css"
 
 const Error = props => {
+
     return (
-        <div>
-            <button onClick={() => props.history.push('/')}>Go Home</button>
-            Error
+        <div className={s.content}>
+            <p className={s.errorText}>Error</p>
+            <button className={s.goHome} onClick={() => props.history.push('/')}>Go Home</button>
         </div>
     )
 }

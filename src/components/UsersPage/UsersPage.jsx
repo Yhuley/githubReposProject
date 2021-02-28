@@ -7,6 +7,7 @@ import {createPages} from "../../utilits/createPages"
 import PageMoving from "../PageMoving/PageMoving"
 import Search from "../Search/Search";
 import {getUsers} from "../../actions/users";
+import {Redirect} from "react-router-dom";
 
 const UsersPage = () => {
     const users = useSelector(state => state.users.items)
@@ -14,6 +15,7 @@ const UsersPage = () => {
     const currentPage = useSelector(state=> state.users.currentPage)
     const perPage = useSelector(state => state.users.perPage)
     const totalCount = useSelector(state => state.users.totalCount)
+    const isFetchError = useSelector(state => state.users.isFetchError)
 
     const [userName, setUserName] = useState('')
     const [sortParam, setSortParam] =useState('followers')
@@ -23,6 +25,10 @@ const UsersPage = () => {
     const pagesAmount = Math.ceil(totalCount / perPage)
     const pages = []
     createPages(pages, pagesAmount, currentPage)
+
+    if (isFetchError){
+        return <Redirect to="/error"/>
+    }
 
     const props = {
         placeHolder: "enter user name",

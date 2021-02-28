@@ -2,10 +2,8 @@ import React, {useEffect, useState} from 'react'
 import s from "./User.module.css"
 import {NavLink} from "react-router-dom"
 import {getUserRepos} from "../../../actions/users"
-import {useDispatch} from "react-redux";
 
 const User = props => {
-    const dispatch = useDispatch()
     const {user} = props
     const [userRepos, setUserRepos] = useState([])
 

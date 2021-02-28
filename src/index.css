@@ -9,7 +9,9 @@
 a{
   color: white;
 }
-
+#root{
+  width: 100%;
+}
 body {
   display: flex;
   justify-content: center;

@@ -1,0 +1,34 @@
+.user{
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    background-color: #12232E;
+    padding: 10px;
+}
+.userInfo{
+    padding-right: 10px;
+}
+.userParagraph{
+    margin-top: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #EEFBFB;
+}
+.userLink{
+    color: #007CC7;
+}
+.userReposListItem{
+    margin-bottom: 25px;
+    padding: 5px;
+}
+.repoParagraph{
+    margin-bottom: 8px;
+}
+@media (max-width: 500px) {
+    .user{
+        flex-direction: column;
+    }
+    .userInfo{
+        padding: 0;
+    }
+}

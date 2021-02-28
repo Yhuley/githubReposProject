@@ -6,6 +6,7 @@ import Error from "./components/ErrorPage/Error"
 import Navigation from "./components/Navigation/Navigation"
 import UsersPage from "./components/UsersPage/UsersPage"
 import UserAccountPage from "./components/UserAccountPage/UserAccountPage"
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
     return (
@@ -21,6 +22,7 @@ const App = () => {
                     <Route render={() => <div>404 Not Found</div>}/>
                 </Switch>
             </div>
+            <Footer/>
         </Fragment>
     )
 }

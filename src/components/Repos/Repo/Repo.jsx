@@ -8,17 +8,13 @@ const Repo = props => {
     return (
         <div className={s.repo}>
             <div className={s.repoHeader}>
-                <div className={s.repoHederName}>
-                    Repo name: {repo.name}
-                    <NavLink to={`/repo/${repo.owner.login}/${repo.name}`}/>
-                </div>
+                <NavLink to={`/repo/${repo.owner.login}/${repo.name}`}>
+                    <div className={s.repoHederName}>
+                        Repo name: {repo.name}
+                    </div>
+                </NavLink>
                 <div className={s.repoHeaderStars}>{repo.stargazers_count} ★</div>
             </div>
-           {/* <div className={s.repoAuthorName}>
-                <a href={repo.html_url}>
-                    Author: {repo.owner.login}
-                </a>
-            </div>*/}
             <p className={s.repoDescription}>Description: {repo.description}</p>
             <p className={s.repoLanguage}>{repo.language}</p>
             <p className={s.repoLastCommit}>Last commit: {repo.updated_at}</p>

@@ -1,0 +1,19 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.errorText{
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 90px;
+    color: #12232E;
+}
+.goHome{
+    background-color: #12232E;
+    color: #007CC7;
+    font-size: 30px;
+    width: 150px;
+    height: 60px;
+}
