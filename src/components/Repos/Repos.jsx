@@ -1,59 +1,58 @@
-import React, {useEffect, useState, useRef} from 'react'
-import {useDispatch, useSelector} from "react-redux"
-import {getRepos} from "../../actions/repos";
-import Repo from "./Repo/Repo";
+import React, {useState} from 'react'
+import {useSelector} from "react-redux"
+import {Redirect} from "react-router-dom"
+import Repo from "./Repo/Repo"
 import s from "./Repos.module.css"
-import {setCurrentPageActionCreator, setIsFetchingActionCreator} from "../../reducers/reposReducer";
-import {createPages} from "../../utilits/createPages";
-import Loading from "../Loading/Loading";
+import {createPages} from "../../utilits/createPages"
+import Loading from "../Loading/Loading"
+import PageMoving from "../PageMoving/PageMoving"
+import Search from "../Search/Search"
+import {getRepos} from "../../actions/repos"
 
 const Repos = () => {
-    const dispatch = useDispatch()
     const repos = useSelector(state => state.repos.items)
     const isFetching = useSelector(state => state.repos.isFetching)
     const currentPage = useSelector(state => state.repos.currentPage)
     const perPage = useSelector(state => state.repos.perPage)
     const totalCount = useSelector(state => state.repos.totalCount)
+    const isFetchError = useSelector(state => state.repos.isFetchError)
+
+    const [repoName, setRepoName] = useState('')
+    const [sortParam, setSortParam] = useState('stars')
+    const [order, setOrder] = useState('desc')
 
     const pagesAmount = Math.ceil(totalCount / perPage)
     const pages = []
     createPages(pages, pagesAmount, currentPage)
 
-    const [searchValue, setSearchValue] = useState('')
-    const inputRef = useRef()
-
-    useEffect(() => {
-        inputRef.current.focus()
-        dispatch(getRepos(searchValue, currentPage, perPage))
-    }, [currentPage])
-
-    const onFormSubmit = event => {
-        event.preventDefault()
-        dispatch(setCurrentPageActionCreator(1))
-        dispatch(getRepos(searchValue, currentPage, perPage))
+    if (isFetchError){
+        return <Redirect to="/error"/>
     }
 
+    const props = {
+        placeHolder: "enter repo name",
+        currentPage,
+        perPage,
+        getItemsParams: [repoName, currentPage, perPage, sortParam, order],
+        inputValue: repoName,
+        setInputValue: setRepoName,
+        sortParam,
+        setSortParam,
+        order,
+        setOrder,
+        orderValues: [
+            "stars",
+            "forks",
+            "updated",
+            "help-wanted-issues"
+        ],
+        buttonValue: "Search Repo",
+        getItems: getRepos,
+    }
     return (
         <div className={s.main}>
-            <form className={s.form} onSubmit={e => onFormSubmit(e)}>
-                <input
-                    ref={inputRef}
-                    type="text"
-                    onChange={e => setSearchValue(e.target.value)}
-                    className={s.input}
-                    value={searchValue}
-                />
-            </form>
-            <div className={s.pagesNav} disabled={isFetching}>
-                {pages.map(page =>
-                    <span
-                        className={currentPage === page ? s.currentPageNavItem : s.pagesNavItem}
-                        key={page}
-                        onClick={() => dispatch(setCurrentPageActionCreator(page))}
-                    >
-                        {page}
-                    </span>)}
-            </div>
+            <Search props={props}/>
+            <PageMoving pages={pages} currentPage={currentPage}/>
             {
                 isFetching === false ?
                     repos.map(repo => <Repo key={repo.id} repo={repo}/>)

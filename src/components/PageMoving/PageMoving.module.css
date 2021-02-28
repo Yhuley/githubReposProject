@@ -1,0 +1,23 @@
+.pagesNav{
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+.pagesNavItem{
+    color: #12232E;
+}
+.pagesNavItem:hover{
+    background-color: #4DA8DA;
+}
+.pagesNavItem, .currentPageNavItem{
+    cursor: pointer;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 10%;
+    font-weight: bolder;
+    font-size: 20px;
+}
+.currentPageNavItem{
+    color: #4DA8DA;
+    background-color: #12232E;
+}

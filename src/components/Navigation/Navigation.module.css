@@ -1,0 +1,21 @@
+.navigation{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 60px;
+    align-items: center;
+    background-color: #12232E;
+    font-weight: bold;
+    font-size: 30px;
+}
+@media (max-width: 400px) {
+    .navigation{
+        flex-direction: column;
+        height: 120px;
+    }
+}
+.navigationItem{
+    color:  #4DA8DA;
+    padding: 10px 20px;
+    margin: 0;
+}

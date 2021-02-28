@@ -3,12 +3,30 @@
     flex-direction: column;
     margin-top: 15px;
 }
-.repoName, .stars, .description{
-    font-size: 1em;
-    font-weight: bolder;
+p{
+    margin: 0 3px;
+}
+.repoHeader{
+    display: flex;
+    flex-direction: row;
+}
+.repoHeaderRight{
     margin-left: 10px;
 }
+.repoName, .stars, .description{
+    font-size: 15px;
+}
 .ownerPhoto{
-    width: 250px;
-
+    width: 100%;
+    margin-top: 5px;
+}
+.backButton{
+    outline: none;
+    width: 10%;
+    background-color: whitesmoke;
+}
+@media (max-width: 500px) {
+    .repoHeader{
+        flex-direction: column;
+    }
 }

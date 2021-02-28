@@ -1,25 +1,32 @@
 .repo{
-  margin-top: 20px;
-  padding: 5px;
+  margin-top: 25px;
+  padding: 10px 15px;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  border: 1px solid #0F1515;
+  background-color: #12232E;
 }
 .repoHeader{
   display: flex;
   justify-content: space-between;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
-.repoHeaderName, .repoHeaderStars{
+.repoHederName{
+  color: #4DA8DA;
+}
+.repoHeaderStars{
   font-weight: bolder;
-}
-.repoLastCommit{
-  font-size: 15px;
-  margin-bottom: 5px;
+  color: #4DA8DA;
 }
 .repoLink{
-  font-size: 10px;
-  color: darkred;
+  font-size: 15px;
+  color: #4DA8DA;
+}
+.repoDescription, .repoLanguage, .repoLastCommit{
+  font-size: 15px;
+  margin-bottom: 5px;
+  color: #EEFBFB;
 }
 @media (max-width: 380px) {
   .repoHeader{

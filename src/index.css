@@ -3,14 +3,19 @@
 *{
   list-style: none;
   text-decoration: none;
-  color: #0F1515;
-  font-family: 'Open Sans', sans-serif;
+  outline: none;
+  border: none;
+}
+a{
+  color: white;
 }
 
 body {
-  width: 90%;
   display: flex;
   justify-content: center;
-  margin: 0;
   padding: 0;
+  margin: 0;
+  color: #4DA8DA;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #EEFBFB;
 }

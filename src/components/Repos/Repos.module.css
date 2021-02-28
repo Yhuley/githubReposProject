@@ -3,23 +3,3 @@
   flex-direction: column;
   padding: 5px;
 }
-.input{
-  width: 100%;
-  padding: 5px;
-}
-.pagesNav{
-  margin: 20px 0;
-  display: flex;
-  justify-content: space-between;
-}
-.pagesNavItem, .currentPageNavItem{
-  cursor: pointer;
-  border: 1px solid darkslategray;
-  padding: 5px 10px;
-  margin: 0 10px;
-}
-.currentPageNavItem{
-  color: #0F1515;
-  font-weight: bolder;
-  background-color: blanchedalmond;
-}
