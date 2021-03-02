@@ -1,6 +1,5 @@
 import axios from 'axios'
-import {setReposActionCreator} from "../reducers/reposReducer"
-import {setIsFetchErrorActionCreator, setIsFetchingActionCreator} from "../reducers/generalActions";
+import {setIsFetchErrorActionCreator, setIsFetchingActionCreator, setReposActionCreator} from "../reducers/actions"
 
 export const getRepos =
     (searchQuery = "stars:%3E1", currentPage = 0, perPage = 5, sortParam, order) => async dispatch => {
@@ -16,10 +15,11 @@ export const getRepos =
                 await axios.get(`https://api.github.com/search/repositories?q=${searchQuery}&sort=${sortParam}&order=${order}&per_page=${perPage}&page=${currentPage}`, { cancelToken: ajaxRequest.token })
             dispatch(setReposActionCreator(response.data))
         }catch (e){
+            console.log(e)
             if (axios.isCancel(e)) {
                 console.log('Previous request canceled, new request is send', e.message)
             } else {
-                dispatch(setIsFetchErrorActionCreator(true))
+                dispatch(setIsFetchErrorActionCreator({bool: true, error: e.toString()}))
                 dispatch(setIsFetchingActionCreator(false))
             }
         }

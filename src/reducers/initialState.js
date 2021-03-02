@@ -4,5 +4,6 @@ export const initialState = {
     currentPage: 1,
     perPage: 5,
     totalCount: 0,
-    isFetchError: false
+    isFetchError: false,
+    errorMessage: ''
 }

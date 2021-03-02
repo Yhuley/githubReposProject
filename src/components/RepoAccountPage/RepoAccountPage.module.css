@@ -2,9 +2,13 @@
     display: flex;
     flex-direction: column;
     margin-top: 15px;
+    padding: 10px 15px;
+    background-color: rgba(18, 35, 46, 0.6);
+    border-radius: 10px;
 }
 p{
-    margin: 0 3px;
+    margin-bottom: 8px;
+    color:  #EEFBFB;
 }
 .repoHeader{
     display: flex;
@@ -13,17 +17,25 @@ p{
 .repoHeaderRight{
     margin-left: 10px;
 }
-.repoName, .stars, .description{
-    font-size: 15px;
+.repoName{
+    font-size: 25px;
+    font-weight: 600;
+    color: #4DA8DA;
 }
 .ownerPhoto{
     width: 100%;
-    margin-top: 5px;
+    border-radius: 5px;
 }
 .backButton{
     outline: none;
-    width: 10%;
-    background-color: whitesmoke;
+    height: 30px;
+    width: 90px;
+    border-radius: 10px;
+    background-color:  #007CC7;
+    color: #EEFBFB;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
 }
 @media (max-width: 500px) {
     .repoHeader{

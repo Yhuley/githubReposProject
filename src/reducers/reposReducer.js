@@ -1,7 +1,5 @@
 import {initialState} from "./initialState"
-import {SET_CURRENT_PAGE, SET_IS_FETCH_ERROR, SET_IS_FETCHING} from "./generalActions";
-
-const SET_REPOS = "SET_REPOS"
+import {SET_CURRENT_PAGE, SET_IS_FETCH_ERROR, SET_IS_FETCHING, SET_REPOS} from "./actions";
 
 const reposReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -25,7 +23,8 @@ const reposReducer = (state = initialState, action) => {
         case SET_IS_FETCH_ERROR:
             return {
                 ...state,
-                isFetchError: action.payload
+                isFetchError: action.payload.bool,
+                errorMessage: action.payload.error
             }
         default:
             return state
@@ -33,5 +32,3 @@ const reposReducer = (state = initialState, action) => {
 }
 
 export default reposReducer
-
-export const setReposActionCreator = repos => ({type: SET_REPOS, payload: repos})

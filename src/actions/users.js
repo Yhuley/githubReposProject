@@ -1,6 +1,5 @@
 import axios from "axios"
-import {getUsersActionCreator} from "../reducers/usersReducer"
-import {setIsFetchErrorActionCreator, setIsFetchingActionCreator} from "../reducers/generalActions"
+import {getUsersActionCreator, setIsFetchErrorActionCreator, setIsFetchingActionCreator} from "../reducers/actions"
 
 export const getUsers = (searchQuery, currentPage = 0, perPage = 5, sortParam, order) => async dispatch => {
     if (searchQuery.length === 0) searchQuery = "react"

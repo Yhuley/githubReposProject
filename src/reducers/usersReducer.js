@@ -1,7 +1,5 @@
 import {initialState} from "./initialState"
-import {SET_CURRENT_PAGE, SET_IS_FETCH_ERROR, SET_IS_FETCHING} from "./generalActions";
-
-const GET_USERS = "GET_USERS"
+import {GET_USERS, SET_CURRENT_PAGE, SET_IS_FETCH_ERROR, SET_IS_FETCHING} from "./actions"
 
 export const usersReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -31,5 +29,3 @@ export const usersReducer = (state = initialState, action) => {
             return state
     }
 }
-
-export const getUsersActionCreator = users => ({type: GET_USERS, payload: users})

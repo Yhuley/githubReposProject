@@ -4,7 +4,8 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  background-color: #12232E;
+  background-color: rgba(18, 35, 46, 0.7);
+  border-radius: 10px;
 }
 .repoHeader{
   display: flex;
@@ -22,14 +23,16 @@
 .repoLink{
   font-size: 15px;
   color: #4DA8DA;
+  word-break: break-all;
 }
 .repoDescription, .repoLanguage, .repoLastCommit{
   font-size: 15px;
   margin-bottom: 5px;
   color: #EEFBFB;
+  word-break: break-all;
 }
-@media (max-width: 380px) {
+@media (max-width: 500px) {
   .repoHeader{
-    display: block;
+    display: inline-block;
   }
 }

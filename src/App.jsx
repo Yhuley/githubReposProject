@@ -1,4 +1,5 @@
 import React, {Fragment} from 'react'
+import "./App.css"
 import {Route, Switch} from "react-router-dom"
 import Repos from "./components/Repos/Repos"
 import RepoAccountPage from "./components/RepoAccountPage/RepoAccountPage.jsx"
@@ -6,7 +7,7 @@ import Error from "./components/ErrorPage/Error"
 import Navigation from "./components/Navigation/Navigation"
 import UsersPage from "./components/UsersPage/UsersPage"
 import UserAccountPage from "./components/UserAccountPage/UserAccountPage"
-import Footer from "./components/Footer/Footer";
+import Footer from "./components/Footer/Footer"
 
 const App = () => {
     return (

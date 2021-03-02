@@ -3,32 +3,41 @@
     padding: 5px 10px;
     display: flex;
     justify-content: space-between;
-    flex-direction: column;
-    background-color: #12232E;
+    flex-direction: row;
+    background-color: rgba(18, 35, 46, 0.7);
+    border-radius: 10px;
 }
 .userHeader{
     display: flex;
     flex-direction: column;
 }
 .userImg{
-    width: 25%;
-    padding: 5px;
+    width: 100%;
+    border-radius: 10px;
 }
 .userName{
     padding: 0 5px;
     font-weight: bolder;
-    font-size: 16px;
-    color: #007CC7;
+    font-size: 15px;
+    color: #EEFBFB;
 }
 .repoLinksList{
     margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 .repoLinkItem{
     margin-bottom: 10px;
     font-weight: normal;
 }
 .userLink{
-    color: #007CC7;
+    color: #4DA8DA;
     font-size: 14px;
     margin: 5px 0;
+}
+@media (max-width: 500px) {
+    .user{
+        flex-direction: column;
+    }
 }

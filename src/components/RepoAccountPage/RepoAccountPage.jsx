@@ -1,4 +1,4 @@
-import React, {useState, useEffect, Fragment} from 'react'
+import React, {useState, useEffect} from 'react'
 import {useParams} from "react-router-dom"
 import {getActiveContributors, getCurrentRepo} from "../../actions/repos"
 import s from './RepoAccountPage.module.css'
@@ -19,7 +19,7 @@ const RepoAccountPage = props => {
             <div className={s.content}>
                 <div className={s.repoHeader}>
                     <div className={s.repoHeaderLeft}>
-                        <img src={repo.owner.avatar_url} alt="owner phot" className={s.ownerPhoto}/>
+                        <img src={repo.owner.avatar_url} alt="owner photo" className={s.ownerPhoto}/>
                         <div className={s.repoName}>{repo.name}</div>
                     </div>
                     <div className={s.repoHeaderRight}>

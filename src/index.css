@@ -7,10 +7,13 @@
   border: none;
 }
 a{
-  color: white;
+  color: #4DA8DA;
 }
 #root{
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 body {
   display: flex;
@@ -19,5 +22,6 @@ body {
   margin: 0;
   color: #4DA8DA;
   font-family: 'Open Sans', sans-serif;
-  background-color: #EEFBFB;
+  background: linear-gradient(45deg, #12232E, #203647,  #007CC7);
+  min-height: 100vh;
 }

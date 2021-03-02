@@ -1,16 +1,16 @@
 .footer{
     width: 100%;
     height: 60px;
-    background-color: #12232E;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bolder;
     font-size: 22px;
-    margin-top: 15px;
+    position: static;
+    bottom: 0;
 }
 .footerLink{
     color: #EEFBFB;
-    font-weight: bolder;
+    font-weight: 600;
     font-size: 22px;
 }

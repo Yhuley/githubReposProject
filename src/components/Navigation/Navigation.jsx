@@ -8,8 +8,8 @@ const Navigation = () => {
     return (
         pathname !== "/error" ?
             <nav className={s.navigation}>
-                <NavLink className={s.navigationItem} to={"/"}>Repos</NavLink>
-                <NavLink className={s.navigationItem} to={"/users"}>Users</NavLink>
+                <NavLink className={s.navigationItem} activeClassName={s.active} to={"/"}>Repos</NavLink>
+                <NavLink className={s.navigationItem} activeClassName={s.active} to={"/users"}>Users</NavLink>
             </nav>
             :
             null

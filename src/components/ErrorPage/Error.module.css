@@ -5,9 +5,9 @@
     align-items: center;
 }
 .errorText{
-    margin-bottom: 20px;
+    margin-top: 40vh;
     font-weight: 600;
-    font-size: 90px;
+    font-size: 50px;
     color: #12232E;
 }
 .goHome{

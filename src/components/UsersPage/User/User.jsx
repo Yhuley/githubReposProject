@@ -13,11 +13,9 @@ const User = props => {
 
     const userReposElement =
         userRepos.map(repo =>
-            <div className={s.repoLinksList} key={repo.id}>
-                <a className={s.repoLinkItem} href={repo.html_url}>
-                    {repo.name}
-                </a>
-            </div>)
+            <a key={repo.id} className={s.repoLinkItem} href={repo.html_url}>
+                {repo.name}
+            </a>)
 
     return (
         <div className={s.user}>
@@ -28,12 +26,14 @@ const User = props => {
                         User name: {user.login}
                     </div>
                 </NavLink>
-                {userRepos.length > 0 && <h3>Repos:</h3>}
+                <a href={user.html_url} className={s.userLink}>
+                    Link: {user.html_url}
+                </a>
+            </div>
+            <div className={s.repoLinksList}>
+                {userRepos.length > 0 && <div style={{color: "#EEFBFB", fontSize: "20px"}}>Repos:</div>}
                 {userReposElement}
             </div>
-            <a href={user.html_url} className={s.userLink}>
-                Link: {user.html_url}
-            </a>
         </div>
     )
 }

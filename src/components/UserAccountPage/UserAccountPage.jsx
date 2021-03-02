@@ -26,6 +26,7 @@ const UserAccountPage = () => {
                     <a href={currentUser.html_url} className={s.userLink}>Link: {currentUser.html_url}</a>
                 </div>
                 <div className={s.userReposList}>
+                    <h2>Repos:</h2>
                     {userRepos.map(repo =>
                         <div key={repo.id} className={s.userReposListItem}>
                             <p className={s.repoParagraph}>{repo.name}</p>

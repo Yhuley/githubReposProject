@@ -1,6 +1,6 @@
 import React from 'react'
 import s from "./PageMoving.module.css"
-import {setCurrentPageActionCreator} from "../../reducers/generalActions"
+import {setCurrentPageActionCreator} from "../../reducers/actions"
 import {useDispatch} from "react-redux"
 
 const PageMoving = props => {

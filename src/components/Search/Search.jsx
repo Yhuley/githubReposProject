@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
 import s from "./Search.module.css"
 import {useDispatch} from "react-redux"
-import {setCurrentPageActionCreator} from "../../reducers/generalActions"
+import {setCurrentPageActionCreator} from "../../reducers/actions"
 
 const Search = ({props}) => {
     const dispatch = useDispatch()
