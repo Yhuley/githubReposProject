@@ -5,6 +5,9 @@
   text-decoration: none;
   outline: none;
   border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 a{
   color: #4DA8DA;
